@@ -18,5 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user', [UserController::class, 'index']);
+// Route::get('/user/{id}', [UserController::class, 'index']);
+Route::get('/test', [UserController::class, 'test']);
+
+Route::get('/user/{name?}', function ($name = 'John') {
+    return $name;
+});
 
