@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PhotoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/user/{id}', [UserController::class, 'index']);
+
+Route::get('/user/{id}', [UserController::class, 'index']) ;
 Route::get('/test', [UserController::class, 'test']);
 
-Route::get('/user/{name?}', function ($name = 'John') {
-    return $name;
-});
+Route::resource('photos', PhotoController::class);
+
+// Route::get('/user/{name?}', function ($name = 'John') {
+//     return $name;
+// });
 
