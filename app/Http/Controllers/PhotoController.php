@@ -20,6 +20,7 @@ class PhotoController extends Controller
         // Query builder
         DB::table('users')->get();
         DB::table('users')->where('email', 'hallo@gmail.com')->first();
+        DB::table('flights')->where('number', 'FR 900')->fist();
 
         // Elequent
         User::all();
