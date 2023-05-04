@@ -27,9 +27,16 @@ class PhotoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    
+
     public function store(StorePhotoRequest $request)
     {
         //
+        //return $request -> all();
+        $request->validate([
+            'title' => 'required|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2848',
+        ]); 
     }
 
     /**
