@@ -8,6 +8,6 @@ class UserController extends Controller
 {
     public function index(Request $request, $id) {
         //return "This is " . $id;
-        return $request->user();
+        // return $request->user();
     }
 }
